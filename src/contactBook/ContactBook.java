@@ -73,7 +73,7 @@ public class ContactBook {
         return result;
     }
 
-    public boolean hasEqualPhones() {
+    public boolean hasEqualPhones() { //EP
         for (int i = 0; i < counter; i++) {
             for (int j = i + 1; j < counter; j++) {
                 if (contacts[i].getPhone() == contacts[j].getPhone())
