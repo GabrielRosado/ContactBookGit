@@ -159,7 +159,7 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
-
+    //mudei para string
     private static void getName(Scanner in, ContactBook cBook){
         int number = in.nextInt();
         in.nextLine();
