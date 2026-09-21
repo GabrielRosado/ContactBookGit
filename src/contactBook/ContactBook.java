@@ -73,7 +73,7 @@ public class ContactBook {
         return result;
     }
 
-    public boolean hasEqualPhones() { //EP
+    public boolean hasEqualPhones() {
         for (int i = 0; i < counter; i++) {
             for (int j = i + 1; j < counter; j++) {
                 if (contacts[i].getPhone() == contacts[j].getPhone())
@@ -90,8 +90,13 @@ public class ContactBook {
         contacts = tmp;
     }
 
-    public Contact getContact(int phone) {
-        return contacts[searchIndexByNumber(phone)];
+    public String getContact(int phone) {
+        int index = searchIndexByNumber(phone);
+        if (index >= 0) {
+            return contacts[index].getName();
+        }else {
+            return null;
+        }
     }
 
     private int searchIndexByNumber(int phone) {

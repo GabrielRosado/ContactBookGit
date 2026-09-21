@@ -29,7 +29,7 @@ public class Main {
     public static final String COMMAND_ERROR = "Unknown command.";
     public static final String PHONE_NOT_EXIST = "Phone number does not exist.";
     public static final String DIFF_CONTACTS = "All contacts have different phone numbers.";
-
+    public static final String EQUAL_CONTACTS = "There are contacts that share phone numbers.";
 
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -159,12 +159,24 @@ public class Main {
         }
         else System.out.println(BOOK_EMPTY);
     }
-
+    //mudei para string
     private static void getName(Scanner in, ContactBook cBook){
-
+        int number = in.nextInt();
+        in.nextLine();
+        String name = cBook.getContact(number);
+        if (name == null) {
+            System.out.println(PHONE_NOT_EXIST);
+        }else{
+        System.out.println(cBook.getContact(number));
+        }
     }
 
     private static void equalPhones(ContactBook cBook){
-
+        boolean val = cBook.hasEqualPhones();
+        if (val) {
+            System.out.println(EQUAL_CONTACTS);
+        }else{
+            System.out.println(DIFF_CONTACTS);
+        }
     }
 }
